@@ -1,0 +1,9 @@
+{
+  "category": "encouragement",
+  "phrases": {
+    "friendly_coach": ["You're making progress.", "Keep going. You've got this.", "Every answer is practice.", "You're getting more confident.", "That effort counts.", "Stay with it. You're improving."],
+    "standard": ["Continue at your pace.", "Keep your answer structured.", "Take a moment to think.", "Focus on one point at a time.", "You can use an example.", "Keep your response concise."],
+    "strict": ["Stay focused.", "Use precise terms.", "Keep answers structured.", "Support each point.", "Be concise.", "Continue."],
+    "rapid_fire": ["Keep it up.", "Stay sharp.", "You got this.", "Keep going.", "Nice pace.", "One at a time."]
+  }
+}

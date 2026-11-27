@@ -1,0 +1,9 @@
+{
+  "category": "transitions",
+  "phrases": {
+    "friendly_coach": ["Let's keep going.", "Ready for the next step?", "Let's build on that.", "Here's another chance to shine.", "Let's switch gears.", "On to the next one."],
+    "standard": ["Moving on.", "Let's continue.", "Next topic.", "Proceed to the next question.", "Now consider another point.", "We'll move to the next item."],
+    "strict": ["Next.", "Continue.", "Move on.", "Proceed.", "Next topic.", "Keep going."],
+    "rapid_fire": ["Next!", "Keep moving.", "Go again.", "And next.", "Quick switch.", "Moving on!"]
+  }
+}

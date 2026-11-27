@@ -1,0 +1,15 @@
+node_modules/
+.env
+**/.env
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+npm-debug.log*
+coverage/
+**/coverage/
+.coverage
+coverage.xml
+.ruff_cache/
+**/.ruff_cache/

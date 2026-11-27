@@ -1,0 +1,28 @@
+export const languages = Object.freeze([
+  { code: 'en', name: 'English', nativeName: 'English', dir: 'ltr', speechLocale: 'en-IN', enabled: true },
+  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', dir: 'ltr', speechLocale: 'hi-IN', enabled: true },
+  { code: 'bn', name: 'Bengali', nativeName: 'বাংলা', dir: 'ltr', speechLocale: 'bn-IN', enabled: true },
+  { code: 'te', name: 'Telugu', nativeName: 'తెలుగు', dir: 'ltr', speechLocale: 'te-IN', enabled: true },
+  { code: 'mr', name: 'Marathi', nativeName: 'मराठी', dir: 'ltr', speechLocale: 'mr-IN', enabled: true },
+  { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்', dir: 'ltr', speechLocale: 'ta-IN', enabled: true },
+  { code: 'ur', name: 'Urdu', nativeName: 'اردو', dir: 'rtl', speechLocale: 'ur-IN', enabled: true },
+  { code: 'gu', name: 'Gujarati', nativeName: 'ગુજરાતી', dir: 'ltr', speechLocale: 'gu-IN', enabled: true },
+  { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ', dir: 'ltr', speechLocale: 'kn-IN', enabled: true },
+  { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം', dir: 'ltr', speechLocale: 'ml-IN', enabled: true },
+  { code: 'or', name: 'Odia', nativeName: 'ଓଡ଼ିଆ', dir: 'ltr', speechLocale: 'or-IN', enabled: false },
+  { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', dir: 'ltr', speechLocale: 'pa-IN', enabled: false },
+  { code: 'as', name: 'Assamese', nativeName: 'অসমীয়া', dir: 'ltr', speechLocale: 'as-IN', enabled: false },
+  { code: 'mai', name: 'Maithili', nativeName: 'मैथिली', dir: 'ltr', speechLocale: 'mai-IN', enabled: false },
+  { code: 'sat', name: 'Santali', nativeName: 'ᱥᱟᱱᱛᱟᱲᱤ', dir: 'ltr', speechLocale: 'sat-IN', enabled: false },
+  { code: 'ks', name: 'Kashmiri', nativeName: 'कॉशुर', dir: 'rtl', speechLocale: 'ks-IN', enabled: false },
+  { code: 'kok', name: 'Konkani', nativeName: 'कोंकणी', dir: 'ltr', speechLocale: 'kok-IN', enabled: false },
+  { code: 'sd', name: 'Sindhi', nativeName: 'سنڌي', dir: 'rtl', speechLocale: 'sd-IN', enabled: false },
+  { code: 'ne', name: 'Nepali', nativeName: 'नेपाली', dir: 'ltr', speechLocale: 'ne-IN', enabled: false },
+  { code: 'doi', name: 'Dogri', nativeName: 'डोगरी', dir: 'ltr', speechLocale: 'doi-IN', enabled: false },
+  { code: 'mni', name: 'Manipuri', nativeName: 'মৈতৈলোন্', dir: 'ltr', speechLocale: 'mni-IN', enabled: false },
+  { code: 'brx', name: 'Bodo', nativeName: 'बड़ो', dir: 'ltr', speechLocale: 'brx-IN', enabled: false },
+  { code: 'sa', name: 'Sanskrit', nativeName: 'संस्कृतम्', dir: 'ltr', speechLocale: 'sa-IN', enabled: false },
+  { code: 'bho', name: 'Bhojpuri', nativeName: 'भोजपुरी', dir: 'ltr', speechLocale: 'bho-IN', enabled: false },
+]);
+
+export default languages;

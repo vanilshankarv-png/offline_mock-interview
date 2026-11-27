@@ -1,0 +1,92 @@
+services:
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  nlp-service:
+    build:
+      context: ./nlp-service
+      dockerfile: Dockerfile
+      args:
+        EMBEDDING_MODEL: ${EMBEDDING_MODEL:-paraphrase-multilingual-MiniLM-L12-v2}
+        ENABLE_WHISPER: ${ENABLE_WHISPER:-false}
+        WHISPER_MODEL_SIZE: ${WHISPER_MODEL_SIZE:-base}
+    restart: unless-stopped
+    env_file:
+      - path: ./nlp-service/.env
+        required: false
+    environment:
+      INTERNAL_KEY: ${INTERNAL_KEY:-local-nlp-key-change-me}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-paraphrase-multilingual-MiniLM-L12-v2}
+      ENABLE_OLLAMA: ${ENABLE_OLLAMA:-false}
+      OLLAMA_URL: ${OLLAMA_URL:-http://ollama:11434/api/generate}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
+      ENABLE_WHISPER: ${ENABLE_WHISPER:-false}
+      WHISPER_MODEL_SIZE: ${WHISPER_MODEL_SIZE:-base}
+      WHISPER_MODEL_DIR: /opt/whisper
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os,urllib.request; req=urllib.request.Request('http://127.0.0.1:8000/nlp/health',headers={'X-Internal-Key':os.environ['INTERNAL_KEY']}); urllib.request.urlopen(req,timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - path: ./server/.env
+        required: false
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 5000
+      CLIENT_ORIGIN: ${CLIENT_ORIGIN:-http://localhost:5173}
+      MONGODB_URI: mongodb://mongo:27017/talkready
+      NLP_SERVICE_URL: http://nlp-service:8000
+      ENABLE_OLLAMA: ${ENABLE_OLLAMA:-false}
+      INTERNAL_KEY: ${INTERNAL_KEY:-local-nlp-key-change-me}
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:-development-access-secret-change-me-000000}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-development-refresh-secret-change-me-000000}
+      JWT_ACCESS_TTL: ${JWT_ACCESS_TTL:-15m}
+      JWT_REFRESH_TTL: ${JWT_REFRESH_TTL:-7d}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@example.com}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-}
+    depends_on:
+      mongo:
+        condition: service_healthy
+      nlp-service:
+        condition: service_healthy
+    ports:
+      - "${SERVER_PORT:-5000}:5000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:5000/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["ollama"]
+    restart: unless-stopped
+    volumes:
+      - ollama_data:/root/.ollama
+    expose:
+      - "11434"
+
+volumes:
+  mongo_data:
+  ollama_data:

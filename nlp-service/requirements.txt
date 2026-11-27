@@ -1,0 +1,18 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+sentence-transformers
+yake
+scikit-learn
+rapidfuzz
+numpy
+langdetect
+indic-nlp-library
+pdfplumber
+python-docx
+faster-whisper
+
+# Test dependencies
+pytest
+httpx

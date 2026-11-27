@@ -1,0 +1,9 @@
+{
+  "category": "openers",
+  "phrases": {
+    "friendly_coach": ["Let's try this one, {name}: {question}", "Here's the next one: {question}", "You're doing well. Try this: {question}", "Take your time with this: {question}", "Ready for another? {question}", "Let's work through this together: {question}"],
+    "standard": ["Next question: {question}", "Please answer this: {question}", "Consider the following: {question}", "Here's your next question: {question}", "Respond to this prompt: {question}", "Question: {question}"],
+    "strict": ["Answer directly: {question}", "Next. {question}", "Be precise: {question}", "Respond now: {question}", "Keep it focused: {question}", "State your answer: {question}"],
+    "rapid_fire": ["Quick one: {question}", "Your turn: {question}", "Go: {question}", "Next up: {question}", "Fast answer: {question}", "Ready? {question}"]
+  }
+}

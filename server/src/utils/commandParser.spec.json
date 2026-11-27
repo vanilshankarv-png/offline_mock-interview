@@ -1,0 +1,15 @@
+{
+  "maxWords": 4,
+  "similarityThreshold": 0.78,
+  "commands": {
+    "repeat": ["repeat", "say that again"],
+    "hint": ["hint", "help me"],
+    "skip": ["skip"],
+    "next": ["next question"],
+    "slower": ["slower"],
+    "faster": ["faster"],
+    "pause": ["pause"],
+    "resume": ["resume"],
+    "finish": ["I'm done", "that's all", "stop interview"]
+  }
+}

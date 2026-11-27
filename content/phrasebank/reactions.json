@@ -1,0 +1,23 @@
+{
+  "category": "reactions",
+  "phrases": {
+    "strong": {
+      "friendly_coach": ["That's a strong answer!", "You explained that really well.", "Nice work. You nailed the key idea.", "Great answer!", "You made that clear.", "That's solid reasoning."],
+      "standard": ["Correct.", "That's a strong response.", "You covered the key point.", "Good explanation.", "That answer is accurate.", "Well stated."],
+      "strict": ["Correct.", "Accurate.", "Key point covered.", "Good. Continue.", "That is sufficient.", "Clear and correct."],
+      "rapid_fire": ["Correct!", "Nice.", "Exactly.", "Good one.", "Nailed it.", "Right!"]
+    },
+    "partial": {
+      "friendly_coach": ["You're on the right track.", "Good start. Add one more detail.", "You've got part of it.", "Close! Let's sharpen that.", "Nice start. Keep going.", "Almost there. Build on that."],
+      "standard": ["Partly correct.", "You have the main idea; add detail.", "Some key points are missing.", "That's a reasonable start.", "Clarify one part of your answer.", "Please add more support."],
+      "strict": ["Partly correct. Be more specific.", "Incomplete. Add the missing point.", "Clarify your reasoning.", "That's not the full answer.", "State the key detail.", "Continue with evidence."],
+      "rapid_fire": ["Almost.", "Add a detail.", "Keep going.", "Not quite.", "One more point.", "Try again."]
+    },
+    "weak": {
+      "friendly_coach": ["That's okay. Let's try a smaller step.", "No worries. Start with the main idea.", "Let's think it through together.", "Take a breath and try again.", "You can build from here.", "Let's revisit the key concept."],
+      "standard": ["That needs correction.", "Review the main concept.", "Try a more focused answer.", "The response is unclear.", "Please reconsider the key idea.", "Let's approach it another way."],
+      "strict": ["Incorrect. Review the concept.", "That answer is incomplete.", "Try again with a clear definition.", "Focus on the question asked.", "The key point is missing.", "Revise your response."],
+      "rapid_fire": ["Try again.", "Not quite.", "Reset.", "Think it through.", "Have another go.", "Review that one."]
+    }
+  }
+}

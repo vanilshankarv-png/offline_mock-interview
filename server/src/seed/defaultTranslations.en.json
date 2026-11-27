@@ -1,0 +1,16 @@
+{
+  "app.name": "TalkReady",
+  "common.loading": "Loading...",
+  "common.save": "Save",
+  "common.cancel": "Cancel",
+  "common.delete": "Delete",
+  "auth.login": "Log in",
+  "auth.register": "Create account",
+  "nav.dashboard": "Dashboard",
+  "nav.notes": "My notes",
+  "nav.practice": "Practice interview",
+  "chat.placeholder": "Ask a question about your notes",
+  "chat.send": "Send",
+  "chat.notFound": "I couldn't find that in your notes.",
+  "progress.title": "Your progress"
+}
